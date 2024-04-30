@@ -3,7 +3,6 @@
 
 const searchRooms = async (searchParams)=>{
 
-// console.log("search params", searchParams)
   
     const settings = {
       method: 'POST',
