@@ -163,42 +163,7 @@ const Search = () => {
     </Form>
 
             
-            {/* <Select id="type">
-                <SelectTrigger className="w-full md:w-48">
-                    <SelectValue placeholder="Type" />
-                </SelectTrigger>
-                <SelectContent>
-                    <SelectGroup>
-                    <SelectItem value="all">All</SelectItem>
-                    <SelectItem value="room">Rooms</SelectItem>
-                    <SelectItem value="flat">Flat</SelectItem>
-                    <SelectItem value="house">House</SelectItem>
-                    <SelectItem value="office">Office</SelectItem>
-                    </SelectGroup>
-                </SelectContent>
-            </Select>
-
-            <Select>
-                <SelectTrigger className="w-full md:w-48">
-                    <SelectValue placeholder="Rent" />
-                </SelectTrigger>
-                <SelectContent>
-                    <SelectGroup className='z-30'  id="rent">
-                    <SelectItem value="all">All</SelectItem>
-                    <SelectLabel>Less than</SelectLabel>
-                    <SelectItem value="5000"> 5,000</SelectItem>
-                    <SelectItem value="10000">10,000</SelectItem>
-                    <SelectItem value="15000">15,000</SelectItem>
-                    <SelectItem value="20000">20,000</SelectItem>
-                    <SelectItem value="25000">25,000</SelectItem>
-                    <SelectItem value="30000">30,000</SelectItem>
-                    <SelectItem value="40000">40,000</SelectItem>
-                    <SelectItem value="50000">50,000</SelectItem>
-                    </SelectGroup>
-                </SelectContent>
-            </Select> */}
-
-
+         
     </article>
     <div className=" w-full flex h-full md:h-80 items-end overflow-hidden absolute top-0 -z-10 brightness-50">
       <Image src={Banner2} alt="banner" className="w-full md:w-1/2 h-auto"/>
