@@ -25,14 +25,14 @@ const Footer = () => {
         {/* middle links  */}
         <div className='px-4 md:px-20 py-4 md:py-8 flex flex-col md:flex-row justify-between gap-4 z-0'>
             {/* <div className="mapBox w-2/5">
-                <Image src={Map} alt="nproom location" />
+                <Image src={Map} alt="Hamrodera location" />
             </div> */}
             <div className='relative md:w-1/2'>
             <div className="logo flex items-center justify-center gap-4 md:mt-8 cursor-pointer">
             <Link href="/">
-                <Image src={Logo} alt="nproom" className='w-8 lg:w-12 h-8 lg:h-12'/>
+                <Image src={Logo} alt="Hamrodera" className='w-8 lg:w-12 h-8 lg:h-12'/>
             </Link>
-            <Link href="/" className=' text-2xl lg:text-5xl font-semibold'>NPROOM</Link>
+            <Link href="/" className=' text-2xl lg:text-5xl font-semibold'>Hamrodera</Link>
             </div>
             <Image src={BannerBlue} alt='banner' className='md:absolute mt-4 md:mt-0 w-full bottom-0' />
             </div>
@@ -40,17 +40,17 @@ const Footer = () => {
             <div className='flex justify-between mt-4 md:mt-0 md:justify-evenly md:w-1/2'>
                 <div className='flex flex-col gap-3 '>
                     <h4 className='font-semibold'>Services</h4>
-                    <Link href="#" className='hover:underline'>Book Rooms/Flat</Link>
-                    <Link href="#" className='hover:underline'>Post Rooms/Flat</Link>
-                    <Link href="#" className='hover:underline'>Browse Categories</Link>
-                    <Link href="#" className='hover:underline'>Track Booking</Link>
+                    <Link href="/find-room" className='hover:underline'>Book Rooms/Flat</Link>
+                    <Link href="/post-room" className='hover:underline'>Post Rooms/Flat</Link>
+                    <Link href="/categories" className='hover:underline'>Browse Categories</Link>
+                    <Link href="/profile" className='hover:underline'>Track Your Rooms</Link>
                 </div>
                 <div className='flex flex-col gap-3 '>
-                    <h4 className='font-semibold'>Nproom</h4>
-                    <Link href="#" className='hover:underline'>About Nproom</Link>
-                    <Link href="#" className='hover:underline'>Contact Us</Link>
-                    <Link href="#" className='hover:underline'>Privacy Policy</Link>
-                    <Link href="#" className='hover:underline'>Terms & Condition</Link>
+                    <h4 className='font-semibold'>Hamrodera</h4>
+                    <Link href="/about" className='hover:underline'>About Hamrodera</Link>
+                    <Link href="/contact" className='hover:underline'>Contact Us</Link>
+                    <Link href="/privacy-policy" className='hover:underline'>Privacy Policy</Link>
+                    <Link href="/terms-and-conditions" className='hover:underline'>Terms & Condition</Link>
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@ const Footer = () => {
         {/* bottom  */}
         <div className="sm:flex sm:items-center sm:justify-between py-4 mx-4 md:px-20">
 
-            <p className="text-sm text-gray-500 w-full text-center md:text-left mb-2 md:mb-0">© 2023 <a href="/" className="hover:underline">nproom</a>. All Rights Reserved.
+            <p className="text-sm text-gray-500 w-full text-center md:text-left mb-2 md:mb-0">© 2023 <a href="/" className="hover:underline">Hamrodera</a>. All Rights Reserved.
             </p>
 
             <div className="flex gap-4 justify-center">

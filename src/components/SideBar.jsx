@@ -32,10 +32,10 @@ const SideBar = () => {
             <hr />
             <div className='flex flex-col [&>a]:py-4 [&>a]:uppercase [&>a]:text-sm [&>a]:text-gray-700'>
               <h3 className='font-semibold mt-4 mb-4 text-lg '>More Links</h3>
-              <Link href="/">About Us</Link>
-              <Link href="/">Contact Us</Link>
-              <Link href="/">Privacy Policy</Link>
-              <Link href="/">Terms & Conditions</Link>
+              <Link href="/about">About Us</Link>
+              <Link href="/contact">Contact Us</Link>
+              <Link href="/privacy-policy">Privacy Policy</Link>
+              <Link href="/terms-and-conditions">Terms & Conditions</Link>
             </div>
             <hr />
             <div className='py-4'>

@@ -20,10 +20,10 @@ const Navbar = () => {
       className="w-full px-20 text-xs text-333 hidden md:flex border-b border-gray-light justify-end"
     >
       <div className="tier1 flex leading-10">
-        <Link href="#" className="mx-8 text-center tracking-widest cursor-pointer hover:underline">ABOUT</Link>
-        <Link href="#" className="mx-8 tracking-widest cursor-pointer hover:underline">SERVICES</Link>
-        <Link href="#" className="mx-8 tracking-widest cursor-pointer hover:underline">FAQ&apos;S</Link>
-        <Link href="#" className="mx-8 tracking-widest cursor-pointer hover:underline">CONTACT</Link>
+        <Link href="/about" className="mx-8 text-center tracking-widest cursor-pointer hover:underline">ABOUT</Link>
+        <Link href="/services" className="mx-8 tracking-widest cursor-pointer hover:underline">SERVICES</Link>
+        <Link href="/faq" className="mx-8 tracking-widest cursor-pointer hover:underline">FAQ&apos;S</Link>
+        <Link href="/contact" className="mx-8 tracking-widest cursor-pointer hover:underline">CONTACT</Link>
       </div>
       <div className="tier2 leading-10">
         <div className="ml-8 tracking-widest">
@@ -39,26 +39,17 @@ const Navbar = () => {
       {/* <!-- logo --> */}
         <div className="logo flex items-center gap-2 md:gap-4 mr-9 cursor-pointer">
           <Link href="/">
-            <Image src={Logo} alt="nproom" className=' w-7 h-7 md:w-12 md:h-12'/>
+            <Image src={Logo} alt="Hamrodera" className=' w-7 h-7 md:w-12 md:h-12'/>
           </Link>
-          <Link href="/" className=' text-xl md:text-3xl font-semibold text-gray-800'>NPROOM</Link>
+          <Link href="/" className=' text-xl md:text-3xl font-semibold text-gray-800'>Hamrodera</Link>
         </div>
 
         {/* <!-- links primary  --> */}
         <div className="tier1 hidden lg:flex leading-[80px] [&>a]:uppercase">
-          <HoverCard>
-            <HoverCardTrigger className="mx-8 tracking-widest cursor-pointer hover:underline">CATEGORY</HoverCardTrigger>
-            <HoverCardContent className="leading-normal font-normal flex flex-col w-40 gap-2">
-                <Link href='#' className='hover:underline'>Find Rooms</Link>
-                <Link href='#' className='hover:underline'>Find Flat</Link>
-                <Link href='#' className='hover:underline'>Find House</Link>
-                <Link href='#' className='hover:underline'>Find Office</Link>
-            </HoverCardContent>
-          </HoverCard>
-
-          <Link href="/" className="mx-8 tracking-widest cursor-pointer hover:underline">Find Room</Link>
+          <Link href="/category" className="mx-8 tracking-widest cursor-pointer hover:underline">Category</Link>
+          <Link href="/find-room" className="mx-8 tracking-widest cursor-pointer hover:underline">Find Room</Link>
           <Link href="/post-room" className="mx-8 tracking-widest cursor-pointer hover:underline">Post room</Link>
-          <Link href="/" className="mx-8 tracking-widest cursor-pointer hover:underline">Guide</Link>
+          <Link href="/guide" className="mx-8 tracking-widest cursor-pointer hover:underline">Guide</Link>
         </div>
       </div>
 
