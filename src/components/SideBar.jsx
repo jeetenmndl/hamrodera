@@ -34,6 +34,8 @@ const SideBar = () => {
               <h3 className='font-semibold mt-4 mb-4 text-lg '>More Links</h3>
               <Link href="/about">About Us</Link>
               <Link href="/contact">Contact Us</Link>
+              <Link href="/services">Services</Link>
+              <Link href="/faq">FAQs / Help</Link>
               <Link href="/privacy-policy">Privacy Policy</Link>
               <Link href="/terms-and-conditions">Terms & Conditions</Link>
             </div>

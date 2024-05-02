@@ -17,9 +17,9 @@ const BuySell = () => {
             </div>
             <div className="md:w-3/5 py-3 md:py-8 px-3 md:px-6 flex flex-col justify-between border-b-2 border-transparent hover:border-main duration-500">
                 <h3 className="text-xl md:text-2xl font-semibold">Rent your room, flat, home</h3>
-                <p className="text-sm  italic text-gray-700">Upload details about your rooms and we will do the finding job.</p>
+                <p className="text-sm  italic text-gray-700 mt-2 md:mt-0">Upload details about your rooms and we will do the finding job.</p>
                 <div className="flex items-center gap-4 mt-4 md:mt-0">
-                <Link href="#" className="text-333 hover:underline">Upload Details</Link>
+                <Link href="/post-room" className="text-333 hover:underline">Upload Details</Link>
                 <ChevronRight />
                 </div>
             </div>
@@ -31,9 +31,9 @@ const BuySell = () => {
             </div>
             <div className="md:w-3/5 py-3 md:py-8 px-3 md:px-6  flex flex-col justify-between border-b-2 border-transparent hover:border-main duration-500">
                 <h3 className="text-xl md:text-2xl font-semibold">Find available rooms</h3>
-                <p className="text-sm italic text-gray-700">Choose and book rooms of your choice at required location.</p>
+                <p className="text-sm italic text-gray-700 mt-2 md:mt-0">Choose and book rooms of your choice at required location.</p>
                 <div className="flex items-center gap-4 mt-4 md:mt-0">
-                <Link href="#" className="text-333 hover:underline">View Rooms</Link>
+                <Link href="/find-room" className="text-333 hover:underline">View Rooms</Link>
                 <ChevronRight />
                 </div>
             </div>
