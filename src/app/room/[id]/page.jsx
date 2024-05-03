@@ -203,7 +203,9 @@ const page = async ({params}) => {
     </main>
 
 
-    <section className=" mx-4 md:mx-20 my-16 ">
+    {/* nearby Locations */}
+
+    {/* <section className=" mx-4 md:mx-20 my-16 ">
       <h2 className='text-2xl md:text-3xl font-semibold mb-6'>Nearby Locations</h2>
       <article className="grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-8">
       {
@@ -214,7 +216,8 @@ const page = async ({params}) => {
         })
       }
       </article>
-    </section>
+    </section> */}
+    
 
     <section className='flex w-full z-30 gap-4 px-5 pt-4 pb-5 items-center justify-between border-y-2 fixed -bottom-1 bg-white lg:hidden' style={{boxShadow: "0px -1px 3px 2px #b1b1b150"}}>
       <div className='flex flex-col'>

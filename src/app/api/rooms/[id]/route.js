@@ -46,7 +46,7 @@ export async function GET(req, {params}) {
 }
 
 
-// get specific room 
+// delete specific room 
 export async function DELETE(req, {params}) {
     try {
 

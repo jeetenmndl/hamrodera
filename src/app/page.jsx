@@ -4,34 +4,40 @@ import Image from "next/image";
 import Search from "@/components/Search";
 import BuySell from "@/components/BuySell";
 import HeroHome from "@/components/HeroHome";
+import getRooms from "@/lib/actions/getRooms";
+import MoreRooms from "@/components/MoreRooms";
 
 
 
-let data = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+export default async function Home() {
 
-export default function Home() {
+  const response = await getRooms();
+
+  const mainRooms = response.slice(0, 12);
+  const moreRooms = response.slice(12);
+
+  let data = [1,2,3,4,5,6]
+
   return (
     <main>
     
-    
-    <Search />
+      <Search />
 
 
     {/* rooms card  */}
     <section className=" mx-6 md:mx-20 my-16 ">
       <article className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
       {
-        data.map((item)=>{
+        mainRooms.map((room)=>{
           return(
-            <RoomCard key={item} />
+            <RoomCard room={room} key={room._id} />
           )
         })
       }
       </article>
-      <div className="flex flex-col items-center my-12">
-        <p className="font-semibold text-lg mb-4 text-center">Continue exploring more rooms and flats</p>
-        <Button className="bg-main">Show More</Button>
-      </div>
+
+      <MoreRooms rooms={moreRooms} />
+
     </section>
 
     <HeroHome />
