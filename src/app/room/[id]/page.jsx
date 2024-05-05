@@ -15,9 +15,8 @@ const page = async ({params}) => {
 
   // console.log(params.id);
   let id = params.id + "room"
-  const result = await getSpecificRoom(id)
+  const result = await getSpecificRoom(id);
   const room = result.data;
-
   return (
     <>
     

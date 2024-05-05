@@ -1,3 +1,4 @@
+
 import React from 'react'
 import {
     Sheet,
@@ -14,14 +15,16 @@ import LoginLogout from './LoginLogout'
   
 
 const SideBar = () => {
+
+
   return (
-    <Sheet >
+    <Sheet>
     <SheetTrigger className='bg-light p-1 rounded hover:bg-gray-300 lg:hidden'>
         <Menu />
     </SheetTrigger>
     <SheetContent>
         <SheetHeader>
-        <SheetTitle className="text-left mb-4">Menu</SheetTitle>
+          <SheetTitle className="text-left mb-4">Menu</SheetTitle>
         </SheetHeader>
             <div className='flex flex-col [&>a]:py-4 uppercase text-black'>
               <Link href="/category">Category</Link>
@@ -36,8 +39,6 @@ const SideBar = () => {
               <Link href="/contact">Contact Us</Link>
               <Link href="/services">Services</Link>
               <Link href="/faq">FAQs / Help</Link>
-              <Link href="/privacy-policy">Privacy Policy</Link>
-              <Link href="/terms-and-conditions">Terms & Conditions</Link>
             </div>
             <hr />
             <div className='py-4'>

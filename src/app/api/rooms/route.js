@@ -2,7 +2,7 @@ import dbConnect from "@/lib/dbConn";
 import Rooms from "@/models/roomsModel";
 import {NextResponse} from "next/server";
 
-export async function GET(req) {
+export async function GET() {
     try {
 
         await dbConnect();
