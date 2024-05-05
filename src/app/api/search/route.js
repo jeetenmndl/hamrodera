@@ -45,7 +45,7 @@ console.log("the request is",searchData)
             })
         }
         else{
-            const rooms = await Rooms.find({"city": searchData.city, "rooms.type": searchData.type,  "rent": {$lte:parseInt(searchData.rent)}});
+            const rooms = await Rooms.find({"city": searchData.city, "rooms.type": searchData.type,  "rent": {$lte:parseInt(searchData.rent)}}).collation({locale: "en", strength: 2});
 
             return NextResponse.json({
                 data: rooms
