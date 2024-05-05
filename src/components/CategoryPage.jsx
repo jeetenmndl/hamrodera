@@ -3,10 +3,11 @@ import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import getAllRooms from '@/lib/actions/getAllRooms'
 import RoomCard from '@/components/RoomCard';
+import getRooms from '@/lib/actions/getRooms';
 
 const CategoryPage = async () => {
 
-const rooms = await getAllRooms();
+const rooms = await getRooms();
 console.log(rooms.length)
 
 
@@ -20,7 +21,7 @@ console.log(rooms.length)
             <TabsTrigger value="office" className="py-2 px-6 md:px-8">Office</TabsTrigger>
         </TabsList>
         </div>
-        {/* <TabsContent className="my-8" value="rooms">
+        <TabsContent className="my-8" value="rooms">
         <article className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             {
                 rooms.map((room)=>{
@@ -74,7 +75,7 @@ console.log(rooms.length)
                 })
             }
             </article>
-        </TabsContent> */}
+        </TabsContent>
         </Tabs>
   )
 }
