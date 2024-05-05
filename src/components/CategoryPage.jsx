@@ -7,6 +7,7 @@ import RoomCard from '@/components/RoomCard';
 const CategoryPage = async () => {
 
 const rooms = await getAllRooms();
+console.log(rooms.length)
 
 
   return (
@@ -19,7 +20,7 @@ const rooms = await getAllRooms();
             <TabsTrigger value="office" className="py-2 px-6 md:px-8">Office</TabsTrigger>
         </TabsList>
         </div>
-        <TabsContent className="my-8" value="rooms">
+        {/* <TabsContent className="my-8" value="rooms">
         <article className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             {
                 rooms.map((room)=>{
@@ -73,7 +74,7 @@ const rooms = await getAllRooms();
                 })
             }
             </article>
-        </TabsContent>
+        </TabsContent> */}
         </Tabs>
   )
 }

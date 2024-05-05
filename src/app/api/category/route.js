@@ -7,7 +7,7 @@ export async function GET() {
 
         await dbConnect();
 
-        const room = await Rooms.find({});
+        const room = await Rooms.find();
 
         return NextResponse.json({
             data: room
