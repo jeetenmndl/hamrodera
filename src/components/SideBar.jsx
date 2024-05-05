@@ -28,7 +28,7 @@ const SideBar = () => {
         </SheetHeader>
             <div className='flex flex-col [&>a]:py-4 uppercase text-black'>
               <Link href="/category">Category</Link>
-              <Link href="/find-rooms">Find Room</Link>
+              <Link href="/find-room">Find Room</Link>
               <Link href="/post-room">Post Room</Link>
               <Link href="/guide">Guide</Link>
             </div>
