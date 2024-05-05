@@ -1,8 +1,8 @@
+
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import getAllRooms from '@/lib/actions/getAllRooms'
 import RoomCard from '@/components/RoomCard';
-
 
 const CategoryPage = async () => {
 
@@ -22,7 +22,7 @@ const rooms = await getAllRooms();
         <TabsContent className="my-8" value="rooms">
         <article className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             {
-                rooms && rooms.map((room)=>{
+                rooms.map((room)=>{
                     if(room.rooms.type=="Room"){
                      return (
                     <RoomCard key={room._id} room={room} />
@@ -36,7 +36,7 @@ const rooms = await getAllRooms();
         <TabsContent className="my-8" value="flat">
         <article className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             {
-                rooms && rooms.map((room)=>{
+                rooms.map((room)=>{
                     if(room.rooms.type=="Flat"){
                      return (
                     <RoomCard key={room._id} room={room} />
@@ -50,7 +50,7 @@ const rooms = await getAllRooms();
         <TabsContent className="my-8" value="home">
         <article className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             {
-                rooms && rooms.map((room)=>{
+                rooms.map((room)=>{
                     if(room.rooms.type=="Home"){
                      return (
                     <RoomCard key={room._id} room={room} />
@@ -64,7 +64,7 @@ const rooms = await getAllRooms();
         <TabsContent className="my-8" value="office">
         <article className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             {
-                rooms && rooms.map((room)=>{
+                rooms.map((room)=>{
                     if(room.rooms.type=="Office"){
                      return (
                     <RoomCard key={room._id} room={room} />
