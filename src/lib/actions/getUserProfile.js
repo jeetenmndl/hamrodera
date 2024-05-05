@@ -12,7 +12,7 @@ const getUserProfile = async (id)=>{
       }
   };
   
-    const query = await fetch(`${process.env.DOMAIN}/api/users/${id}`, settings)
+    const query = await fetch(`${process.env.DOMAIN}/api/users/${id}`, settings,{cache: "no-store"})
     const response = await query.json()
 
    return response;

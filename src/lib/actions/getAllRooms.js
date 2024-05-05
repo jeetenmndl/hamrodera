@@ -11,11 +11,17 @@ const getAllRooms = async ()=>{
           'Content-Type': 'application/json',
       }
   };
-  
+
+  try{
     const query = await fetch(`${process.env.DOMAIN}/api/category`, settings, {cache: "no-store"})
     const response = await query.json()
+  
+   return {success: true, data: response.data};
 
-   return response.data;
+  }catch(err){
+    return {success:false, error: err}
+  }
+  
     
   }
 

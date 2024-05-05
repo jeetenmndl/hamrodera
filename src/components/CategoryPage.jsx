@@ -7,8 +7,8 @@ import getRooms from '@/lib/actions/getRooms';
 
 const CategoryPage = async () => {
 
-const rooms = await getRooms();
-console.log(rooms.length)
+const rooms = await getAllRooms();
+
 
 
   return (
@@ -21,10 +21,13 @@ console.log(rooms.length)
             <TabsTrigger value="office" className="py-2 px-6 md:px-8">Office</TabsTrigger>
         </TabsList>
         </div>
+        {
+            rooms.success?
+            <>
         <TabsContent className="my-8" value="rooms">
         <article className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             {
-                rooms.map((room)=>{
+                rooms.data.map((room)=>{
                     if(room.rooms.type=="Room"){
                      return (
                     <RoomCard key={room._id} room={room} />
@@ -38,7 +41,7 @@ console.log(rooms.length)
         <TabsContent className="my-8" value="flat">
         <article className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             {
-                rooms.map((room)=>{
+                rooms.data.map((room)=>{
                     if(room.rooms.type=="Flat"){
                      return (
                     <RoomCard key={room._id} room={room} />
@@ -52,7 +55,7 @@ console.log(rooms.length)
         <TabsContent className="my-8" value="home">
         <article className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             {
-                rooms.map((room)=>{
+                rooms.data.map((room)=>{
                     if(room.rooms.type=="Home"){
                      return (
                     <RoomCard key={room._id} room={room} />
@@ -66,7 +69,7 @@ console.log(rooms.length)
         <TabsContent className="my-8" value="office">
         <article className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             {
-                rooms.map((room)=>{
+                rooms.data.map((room)=>{
                     if(room.rooms.type=="Office"){
                      return (
                     <RoomCard key={room._id} room={room} />
@@ -76,7 +79,12 @@ console.log(rooms.length)
             }
             </article>
         </TabsContent>
+        </>
+        :
+        <div>{rooms.error}</div>
+        }
         </Tabs>
+
   )
 }
 

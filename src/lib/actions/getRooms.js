@@ -12,7 +12,7 @@ const getRooms = async ()=>{
       }
   };
   
-    const query = await fetch(`${process.env.DOMAIN}/api/rooms`, settings)
+    const query = await fetch(`${process.env.DOMAIN}/api/rooms`, settings,{cache: "no-store"})
     const response = await query.json()
 
    return response.data;
