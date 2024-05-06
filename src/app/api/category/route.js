@@ -7,7 +7,7 @@ export async function GET() {
 
         await dbConnect();
 
-        const room = await Rooms.find({}).select('_id city area neighbourhood rent photos rooms.type rooms.roomSize').limit(1);
+        const room = await Rooms.find({}).select('_id city area neighbourhood rent photos rooms.type rooms.roomSize');
 
         console.log("selecting rooms", room)
 
