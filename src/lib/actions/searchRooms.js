@@ -12,9 +12,10 @@ const searchRooms = async (searchParams)=>{
       body: JSON.stringify(searchParams)
   };
   
-    const query = await fetch(`${process.env.DOMAIN}/api/search`, settings, {cache: 'no-store'})
+    const query = await fetch(`${process.env.DOMAIN}/api/search`, settings, { next: { revalidate: 300 } })
     const response = await query.json()
-  
+
+    console.log("sesarch",response)
     return response
   }
 

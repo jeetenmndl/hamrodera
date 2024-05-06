@@ -17,7 +17,7 @@ console.log("the request is",searchData)
 
         if(searchData.type == "all" && searchData.rent=="all"){
 
-            const rooms = await Rooms.find({"city": searchData.city}).collation({locale: "en", strength: 2});
+            const rooms = await Rooms.find({"city": searchData.city}).collation({locale: "en", strength: 2}).select('_id city area neighbourhood rent photos rooms.type rooms.roomSize');
 
             return NextResponse.json({
                 data: rooms
@@ -27,7 +27,7 @@ console.log("the request is",searchData)
         }
         else if(searchData.type == "all" && searchData.rent != "all"){
 
-            const rooms = await Rooms.find({"city": searchData.city, "rent": {$lte:parseInt(searchData.rent)}}).collation({locale: "en", strength: 2});
+            const rooms = await Rooms.find({"city": searchData.city, "rent": {$lte:parseInt(searchData.rent)}}).collation({locale: "en", strength: 2}).select('_id city area neighbourhood rent photos rooms.type rooms.roomSize');
 
             return NextResponse.json({
                 data: rooms
@@ -36,7 +36,7 @@ console.log("the request is",searchData)
             })
         }
         else if(searchData.type != "all" && searchData.rent == "all"){
-            const rooms = await Rooms.find({"city": searchData.city, "rooms.type": searchData.type}).collation({locale: "en", strength: 2});
+            const rooms = await Rooms.find({"city": searchData.city, "rooms.type": searchData.type}).collation({locale: "en", strength: 2}).select('_id city area neighbourhood rent photos rooms.type rooms.roomSize');
 
             return NextResponse.json({
                 data: rooms
@@ -45,7 +45,7 @@ console.log("the request is",searchData)
             })
         }
         else{
-            const rooms = await Rooms.find({"city": searchData.city, "rooms.type": searchData.type,  "rent": {$lte:parseInt(searchData.rent)}}).collation({locale: "en", strength: 2});
+            const rooms = await Rooms.find({"city": searchData.city, "rooms.type": searchData.type,  "rent": {$lte:parseInt(searchData.rent)}}).collation({locale: "en", strength: 2}).select('_id city area neighbourhood rent photos rooms.type rooms.roomSize');
 
             return NextResponse.json({
                 data: rooms

@@ -15,6 +15,8 @@ const getAllRooms = async ()=>{
   try{
     const query = await fetch(`${process.env.DOMAIN}/api/category`, settings, {cache: "no-store"})
     const response = await query.json()
+
+    // console.log("response", response)
   
    return {success: true, data: response.data};
 
