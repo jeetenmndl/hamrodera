@@ -5,7 +5,7 @@ import React from 'react'
 const page = () => {
   return (
     <div>admin sign in
-        <Link href="/admin/dashboard"><Button>Dashboard</Button></Link>
+        <Link href="/admin/users"><Button>Dashboard</Button></Link>
 
     </div>
   )

@@ -4,7 +4,7 @@ import BookingCard from '@/components/BookingCard'
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 
-import {Bath, Bed, Check, CookingPot, Droplet, Plug, RockingChair, Ruler, School, Sofa, SquareParking, Wifi, Wind} from "lucide-react"
+import {Bath, Bed, Check, CookingPot, Droplet, Frown, Plug, RockingChair, Ruler, School, Sofa, SquareParking, Wifi, Wind} from "lucide-react"
 import {X} from "lucide-react"
 import RoomCard from '@/components/RoomCard'
 import { Button } from '@/components/ui/button'
@@ -17,11 +17,19 @@ const page = async ({params}) => {
   let id = params.id + "room"
   const result = await getSpecificRoom(id);
   const room = result.data;
+  console.log("room is", room)
   return (
     <>
     
     <main className='md:px-20 md:pt-8 md:flex gap-16 md:justify-between'>
 
+    {
+    room.length==0?
+    <div className='w-full py-40 flex items-center flex-col gap-4 text-3xl font-semibold text-gray-500'>
+              <p>Oops!! Room not found</p> <Frown size={32} />
+            </div>
+    : 
+    <>
       {/* left section */}
       <div className=' md:w-4/6'>
 
@@ -199,6 +207,8 @@ const page = async ({params}) => {
         <BookingCard room={room} />
       </div>
 
+    </>
+    }
     </main>
 
 
