@@ -68,7 +68,23 @@ const Register = () => {
             setLoading(true);
             const response = await postUser(values, document);
             console.log("in register page", response);
-            localStorage.setItem("auth-token", response.data)
+            if(response.success==true){
+                localStorage.setItem("auth-token", response.data.data)
+                toast({
+                    title: "Congratulations !",
+                    description: "Account created sucessfully.",
+                })
+                setTimeout(() => {
+                    router.back();
+                }, 3000);
+            }
+            else{
+                toast({
+                    title: "Oops !",
+                    description: response.data,
+                    variant: "destructive",
+                })
+            }
         } catch (error) {
             console.log(error)
             toast({
@@ -78,13 +94,7 @@ const Register = () => {
             })
         }finally{
             setLoading(false);
-            toast({
-                title: "Congratulations !",
-                description: "Account created sucessfully.",
-            })
-            setTimeout(() => {
-                router.back();
-            }, 3000);
+            
         }
     }
 
