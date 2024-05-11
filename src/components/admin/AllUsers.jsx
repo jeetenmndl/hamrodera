@@ -1,4 +1,4 @@
-'uee client'
+'use client'
 
 import React, { useEffect, useState } from 'react'
 import {
@@ -10,10 +10,11 @@ import {
     TableHeader,
     TableRow,
   } from "@/components/ui/table"
-import { Frown, MessageSquareText, Phone, Trash2 } from 'lucide-react'
+import { File, Frown, MessageSquareText, Phone, Trash2 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useToast } from '../ui/use-toast'
 import getAllUsers from '@/lib/actions/admin/getAllUsers'
+import Link from 'next/link'
 
   
 
@@ -25,7 +26,6 @@ const AllUsers = () => {
   // const [auth, setAuth] = useState(null);
   const [allusers, setallusers] = useState({success:false, message: "Loading..."});
 
-  let users = [];
 
   useEffect(() => {
     let auth = sessionStorage.getItem("tempo");
@@ -33,10 +33,14 @@ const AllUsers = () => {
       toast({
         title:"Oops!",
         description: "You do not have access",
-        varinat: "destructive"
-      })
+        variant: "destructive"
+      });
+
       console.log("not verified")
-      // router.back();
+      
+      setTimeout(() => {
+        router.push("/admin");
+      }, 2000);
     }else{
       console.log("verified")
       getUsers(auth);
@@ -60,22 +64,34 @@ const AllUsers = () => {
       <Table className="rounded-lg">
       <TableCaption>List of all users.</TableCaption>
       <TableHeader className="bg-slate-900 rounded-lg">
-          <TableRow className="">
+       <TableRow className="">
           <TableHead className=" min-w-48 text-white">Name</TableHead>
           <TableHead className=" text-white">Phone</TableHead>
           <TableHead className=" text-white">Address</TableHead>
           <TableHead className=" text-white">Study</TableHead>
-          </TableRow>
+          <TableHead className=" text-white">Document</TableHead>
+        </TableRow>
       </TableHeader>
       <TableBody>
         {
-          [1,2,3,4,5].map((item)=>{
+          allusers.data.map((item)=>{
             return(
-            <TableRow key={item}>
-              <TableCell>Jeeten Kumar Mandal</TableCell>
-              <TableCell>9812345678</TableCell>
-              <TableCell>Biratnagar 10</TableCell>
-              <TableCell>Arniko college biratnagar</TableCell>
+            <TableRow key={item._id}>
+              <TableCell>{item.name}</TableCell>
+              <TableCell>{item.phone}</TableCell>
+              <TableCell>{item.address}</TableCell>
+              <TableCell>{item.study}</TableCell>
+              <TableCell>
+                {
+                  item.document?
+                  <Link disabled target='_blank' href={item.document}>
+                  <File className='cursor-pointer hover:text-green-600' size={20} strokeWidth={1.75} />
+                  </Link>
+                  :
+                  ""
+
+                }
+              </TableCell>
               {/* <TableCell className=" flex gap-4 lg:gap-6 justify-end">
                 <MessageSquareText className='lg:text-gray-700 hover:text-blue-700 text-blue-700 cursor-pointer' size={20} strokeWidth={1.75} />
                 <Phone className='lg:text-gray-700 hover:text-green-700 text-green-700 cursor-pointer' size={20} strokeWidth={1.75} />

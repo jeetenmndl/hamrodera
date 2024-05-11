@@ -20,7 +20,7 @@ export default function CarouselImage(props) {
             <div className="md:p-1">
               <Card>
                 <CardContent className="flex w-full items-center justify-center p-0 bg-light">
-                  <Image src={photo} width={500} height={900} className="w-auto h-full" alt="room" />
+                  <Image src={photo} width={500} height={900} className=" w-auto h-full" alt="room" />
                 </CardContent>
               </Card>
             </div>
