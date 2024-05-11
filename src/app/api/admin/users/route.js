@@ -8,17 +8,32 @@ export async function POST(req) {
         await dbConnect();
 
         const auth = await req.json();
-        // const user = await Users.find({});
 
-        return NextResponse.json({
-            data: auth
-        }, {
-            status: 200
-        })
+        let check = ["9824390430"].includes(auth.phone);
+
+        if(check){
+            const users = await Users.find({});
+            return NextResponse.json({
+                success: true,
+                data: users
+            }, {
+                status: 200
+            })
+        }
+        else{
+            return NextResponse.json({
+                success: false,
+                message: "Access Denied"
+            }, {
+                status: 200
+            })
+        }
+
+
 
     }catch (e) {
         return NextResponse.json(
-            { message: "Server error, please try again!" },
+            { success:false, message: "Server error, please try again!" },
             { status: 500 }
         )
     }

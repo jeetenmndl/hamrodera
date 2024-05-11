@@ -1,9 +1,13 @@
+'use client'
+
 import AllUsers from '@/components/admin/AllUsers'
 import { Button } from '@/components/ui/button'
+import getAllUsers from '@/lib/actions/admin/getAllUsers'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect } from 'react'
 
-const page = () => {
+const page =  () => {
+
   return (
     <main className='px-4 md:px-20 py-4 md:py-8'>
     <div className=' mb-4 md:mt-4 md:mb-12 flex justify-between'>
