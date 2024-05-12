@@ -16,8 +16,8 @@ import {
     FormLabel,
     FormMessage,
   } from "@/components/ui/form"
-import { Input } from './ui/input'
-import { useToast } from './ui/use-toast'
+import { Input } from '@/components/ui/input'
+import { useToast } from '@/components/ui/use-toast'
 import { Loader2 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import getSpecificUserOTP from '@/lib/actions/getSpecificUser'
@@ -28,6 +28,7 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp"
 import confirmOTP from '@/lib/actions/confirmOTP'
+import sendOTPadmin from '@/lib/actions/admin/sendOTPadmin'
 
   
 
@@ -39,22 +40,10 @@ const formSchema = z.object({
     
   })
 
-const Login = () => {
+const AdminLogin = () => {
 
-    useEffect(() => {
-      isLogged();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
 
-    const isLogged = ()=>{
-      
-      let check = localStorage.getItem("auth-token");
-      if(check != null && check != ""){
-        router.push("/")
-      }
-
-    }
-    
 
     const router = useRouter()
     const {toast}= useToast();
@@ -74,16 +63,15 @@ const Login = () => {
     async function onSubmit(values) {
         try {
             setLoading(true);
-            const response = await getSpecificUserOTP(values.phone);
+            const response = await sendOTPadmin(values.phone);
             if(response.found==true){
               sessionStorage.setItem("phone", values.phone);
-              sessionStorage.setItem("userID", response.userID)
               setOtpShow(true);
             }
             else{
               toast({
                 title: "Oops !",
-                description: "User not found.",
+                description: "Access Denied",
                 variant: "destructive",
             })
             }
@@ -114,16 +102,15 @@ const Login = () => {
           const response = await confirmOTP(phone, otpCode.value);
 
           if(response.matched){
-            localStorage.setItem("auth-token", sessionStorage.getItem("userID"));
+            sessionStorage.setItem("tempo", phone);
             sessionStorage.removeItem("phone");
-            sessionStorage.removeItem("userID");
             toast({
               title: "Congratulations !",
               description: "Logged in Successfully.",
               variant: "success"
             });
             setTimeout(() => {
-              router.back();
+              router.push("/admin/users");
             }, 3000);
           }
           else{
@@ -152,11 +139,11 @@ const Login = () => {
   return (
     
     <Form {...form}>
-    <form onSubmit={form.handleSubmit(onSubmit)}>
+    <form onSubmit={form.handleSubmit(onSubmit)} className="w-full md:w-96">
     <Card>
         <CardHeader>
             <CardTitle>Log in</CardTitle>
-            <CardDescription>Log in to your account to sell/buy rooms</CardDescription>
+            <CardDescription>Log in to admin Dashboard</CardDescription>
         </CardHeader>
         <CardContent className="space-y-2">
 
@@ -225,4 +212,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default AdminLogin

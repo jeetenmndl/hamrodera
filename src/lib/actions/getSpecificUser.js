@@ -24,7 +24,7 @@ const getSpecificUserOTP = async (phone)=>{
         let num2 = parseInt(response.data.phone.slice(-5));
         let num3 = num1 + num2;
         const date = new Date()
-        let code = date.getDay()*num3
+        let code = date.getDate()*num3
         code = code.toString();
         code = code.slice(0,5)
         console.log("OTP is", code);

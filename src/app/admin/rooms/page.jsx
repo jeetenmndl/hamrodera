@@ -16,10 +16,6 @@ const page = () => {
 
     <AllRooms />
 
-    <div>admin dashboard 
-        <br />
-        <Link href="/admin"><Button>Back to admin</Button></Link>
-    </div>
     </main>
   )
 }
