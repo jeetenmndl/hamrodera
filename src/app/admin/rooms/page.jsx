@@ -15,6 +15,7 @@ const page = () => {
     </div>
 
     <AllRooms />
+    
 
     </main>
   )
