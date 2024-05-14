@@ -64,6 +64,7 @@ const AdminLogin = () => {
         try {
             setLoading(true);
             const response = await sendOTPadmin(values.phone);
+            console.log(response)
             if(response.found==true){
               sessionStorage.setItem("phone", values.phone);
               setOtpShow(true);
@@ -71,9 +72,9 @@ const AdminLogin = () => {
             else{
               toast({
                 title: "Oops !",
-                description: "Access Denied",
+                description: response.message,
                 variant: "destructive",
-            })
+              })
             }
         } catch (error) {
             console.log(error)
