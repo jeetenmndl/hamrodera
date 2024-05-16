@@ -2,7 +2,11 @@ import ProfileCard from '@/components/ProfileCard'
 import RoomsInProfile from '@/components/RoomsInProfile'
 import { Separator } from '@/components/ui/separator'
 
-import React from 'react'
+export const metadata = {
+  title: "Profile",
+  description: "See your profile info and the rooms that you have posted at hamrodera.",
+};
+
 
 const page = () => {
   return (

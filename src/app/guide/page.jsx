@@ -1,4 +1,8 @@
-import React from 'react'
+export const metadata = {
+    title: "Guide",
+    description: "See the process and steps that you should follow to do your tasks like register, finding rooms, searching rooms, and posting rooms so that you do not face any problems.",
+  };
+  
 
 const page = () => {
   return (

@@ -1,10 +1,16 @@
-import React from 'react'
+
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
   } from "@/components/ui/accordion"
+
+  export const metadata = {
+    title: "FAQ's",
+    description: "See the frequently asked questions on Hamrodera and brief answers to them.",
+  };
+  
 
 const page = () => {
   return (

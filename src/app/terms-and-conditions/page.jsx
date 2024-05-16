@@ -1,4 +1,8 @@
-import React from 'react'
+export const metadata = {
+    title: "Terms & Conditions",
+    description: "See all the terms and conditions of hamrodera.",
+  };
+  
 
 const page = () => {
   return (

@@ -1,4 +1,9 @@
-import React from 'react'
+export const metadata = {
+    title: "Privacy policy",
+    description: "See the privacy policy at hamrodera.",
+  };
+
+  
 
 const page = () => {
   return (

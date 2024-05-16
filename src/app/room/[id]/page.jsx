@@ -11,6 +11,18 @@ import { Button } from '@/components/ui/button'
 import BookingDrawer from '@/components/BookingDrawer'
 import getSpecificRoom from '@/lib/actions/getSpecificRoom'
 
+export async function generateMetadata({params}){
+  let id = params.id + "room"
+  const result = await getSpecificRoom(id);
+  const room = result.data;
+
+  return({
+    title: room.area+" "+room.city,
+    description: room.description
+  })
+}
+
+
 const page = async ({params}) => {
 
   // console.log(params.id);

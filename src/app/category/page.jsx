@@ -1,5 +1,10 @@
 import CategoryPage from '@/components/CategoryPage'
-import React from 'react'
+
+export const metadata = {
+  title: "Category",
+  description: "View different category of stays seperately for ease of finding room. You can choose among stay type like rooms, flat, home, or office.",
+};
+
 
 
 const page = () => {

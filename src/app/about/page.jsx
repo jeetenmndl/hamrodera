@@ -1,6 +1,12 @@
 import HeroHome from '@/components/HeroHome'
 import React from 'react'
 
+export const metadata = {
+    title: "About",
+    description: "Introducing hamrodera, your go-to destination for seamless room hunting. Whether you're a student, a working professional, or someone in search of a cozy space to call your own, hamrodera has got you covered!",
+  };
+  
+
 const page = () => {
   return (
     <>

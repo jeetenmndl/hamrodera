@@ -12,9 +12,36 @@ const poppins = Poppins({
 })
 
 export const metadata = {
-  title: "HAMRODERA | HOMEPAGE",
+  title:{
+    default: "Homepage | Hamrodera",
+    template: "%s | Hamrodera"
+  },
   description: "Introducing hamrodera, your go-to destination for seamless room hunting. Whether you're a student, a working professional, or someone in search of a cozy space to call your own, hamrodera has got you covered!",
-};
+  twitter:{
+    card: "summary_large_image"
+  },
+  generator: 'Hamrodera',
+  applicationName: 'Hamrodera',
+  referrer: 'origin-when-cross-origin',
+  keywords: ['Find room in Nepal', 'Search available rooms in Nepal', 'Hamrodera'],
+  authors: [{ name: 'Josh', url: 'https://jeeten.com.np' }],
+  creator: 'Jeeten Mandal',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://hamrodera.com'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/en-US',
+    },
+  },
+  openGraph: {
+    images: './opengraph-image.png',
+  },
+}
 
 export default function RootLayout({ children }) {
   return (

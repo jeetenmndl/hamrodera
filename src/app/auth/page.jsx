@@ -10,6 +10,12 @@ import Register from '@/components/Register'
 import Login from '@/components/Login'
 
 
+export const metadata = {
+  title: "Login",
+  description: "Login or register to hamrodera to buy or sell the room. Simple steps with basic credentials are required in order to complete the process.",
+};
+
+
 const page = () => {
   
 

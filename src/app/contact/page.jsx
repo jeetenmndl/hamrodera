@@ -1,5 +1,10 @@
 import HeroHome from '@/components/HeroHome'
-import React from 'react'
+
+export const metadata = {
+    title: "Contact",
+    description: "Contact to hamrodera for any advertisements, partnerships or affilitiation. Contact the number given in this page.",
+  };
+  
 
 const page = () => {
   return (

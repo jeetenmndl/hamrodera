@@ -5,6 +5,12 @@ import Banner1 from '@/../public/banner1.png'
 import Banner2 from '@/../public/banner2.png'
 import {ChevronRight} from 'lucide-react'
 
+export const metadata = {
+    title: "Services",
+    description: "See the details of all the services provided by hamrodera.",
+  };
+  
+
 const page = () => {
   return (
 
