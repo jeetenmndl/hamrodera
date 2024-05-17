@@ -2,7 +2,8 @@ import RoomCard from '@/components/RoomCard'
 import Search from '@/components/Search'
 import searchRooms from '@/lib/actions/searchRooms'
 import { Frown } from 'lucide-react'
-import React from 'react'
+import React, { Suspense } from 'react'
+import Loading from './Loading'
 
 const page = async ({searchParams}) => {
     // console.log(searchParams)
@@ -12,6 +13,7 @@ const page = async ({searchParams}) => {
   return (
     <main className='relative min-h-dvh'>
         <Search />
+        <Suspense fallback={<Loading />}>
           {
             rooms.length==0?
             <div className='w-full py-32 flex items-center flex-col gap-4 absolute text-3xl font-semibold text-gray-500'>
@@ -27,8 +29,10 @@ const page = async ({searchParams}) => {
             })
           }
         </section>
+        
 
           }
+          </Suspense>
     </main>
   )
 }
