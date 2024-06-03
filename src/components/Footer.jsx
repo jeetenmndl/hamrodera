@@ -17,7 +17,7 @@ const Footer = () => {
         {/* logo and slogan */}
         <div className='flex px-2 md:px-20 py-4 gap-8 '>
             <p className='font-semibold text-lg w-full md:text-2xl text-center md:text-left text-gray-800'>We find the rooms, so you dont have to</p>
-            <p className='font-semibold text-2xl text-gray-800 hidden'>No Commission.</p>
+            <p className='font-semibold text-2xl text-gray-800 hidden'>No Commission</p>
         </div>
 
         <hr className="border-gray-200 sm:mx-auto " />
