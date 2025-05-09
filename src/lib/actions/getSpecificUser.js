@@ -28,7 +28,7 @@ const getSpecificUserOTP = async (phone)=>{
         code = code.toString();
         code = code.slice(0,5)
         console.log("OTP is", code);
-        return { found: true, userID: response.data._id }
+        return { found: true, userID: response.data._id, OTP: code }
     }
   
     
