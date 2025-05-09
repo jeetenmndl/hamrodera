@@ -79,6 +79,11 @@ const Login = () => {
               sessionStorage.setItem("phone", values.phone);
               sessionStorage.setItem("userID", response.userID)
               setOtpShow(true);
+
+                 toast({
+                title: "OTP",
+                description: "For now use this OTP to login: "+response.OTP,
+            })
             }
             else{
               toast({
