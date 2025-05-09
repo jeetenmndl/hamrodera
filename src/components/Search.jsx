@@ -74,7 +74,7 @@ const Search = () => {
             {/* <Input type="text" id="city" placeholder="Enter City Name" /> */}
 
         <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col md:flex-row gap-1 w-full md:w-auto px-6 lg:px-16">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col md:flex-row gap-1 w-full md:w-auto px-6 lg:px-20">
 
         <FormField
             control={form.control}
